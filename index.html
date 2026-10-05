@@ -1,13 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wang Yichun - Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wang Yichun - Resume</title>
+    <style>
+        :root {
+            --text-primary: #1a1a1a;
+            --text-secondary: #555;
+            --border-color: #e0e0e0;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --accent-color: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            padding: 30px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 50px 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.4em;
+            color: var(--accent-color);
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 1.3em;
+            color: var(--accent-color);
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Education Block */
+        .edu-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .edu-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--text-primary);
+        }
+
+        .edu-date {
+            font-weight: 500;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .edu-details {
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .gpa-line {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .courses {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+        }
+
+        /* Research Section */
+        .research-item {
+            margin-bottom: 30px;
+        }
+
+        .research-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 3px;
+        }
+
+        .research-title {
+            font-weight: 700;
+            font-size: 1.05em;
+            color: var(--text-primary);
+        }
+
+        .research-date {
+            font-weight: 500;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            font-size: 0.95em;
+        }
+
+        .research-role {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .subsection-title {
+            font-weight: 600;
+            font-size: 0.98em;
+            color: var(--text-primary);
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            font-size: 0.95em;
+            text-align: justify;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Skills Block */
+        .skills-group {
+            margin-bottom: 10px;
+        }
+
+        .skills-label {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .container {
+                padding: 25px 20px;
+                border-radius: 8px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.15em;
+                margin-top: 25px;
+            }
+
+            .edu-block, .research-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .edu-date, .research-date {
+                margin-top: 2px;
+            }
+
+            p {
+                font-size: 0.92em;
+                text-align: left;
+            }
+
+            ul li {
+                font-size: 0.92em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Wang Yichun</h1>
-  <p>Email: your@email.com</p>
-  <p>This is my personal resume website.</p>
+
+<div class="container">
+    <header>
+        <h1>Wang Yichun</h1>
+        <div class="subtitle">Mathematics and Applied Mathematics | Chongqing University</div>
+    </header>
+
+    <!-- Education Section -->
+    <section>
+        <h2>Education</h2>
+        <div class="edu-block">
+            <div class="edu-title">Chongqing University (Chongqing)</div>
+            <div class="edu-date">2024.9 - 2028.6</div>
+        </div>
+        <div class="edu-details">
+            <div class="gpa-line">Mathematics and Applied Mathematics | Undergraduate &nbsp; GPA 3.7 (3/40+)</div>
+            <div class="courses">Major courses and grades: Complex Analysis: 100 &nbsp; Real Analysis: 99 &nbsp; Mathematical Analysis: 99 &nbsp; ODE: 98 &nbsp; Topology: 96 &nbsp; Python: 94 &nbsp; Advanced Python: 98</div>
+        </div>
+    </section>
+
+    <!-- Research Experience -->
+    <section>
+        <h2>Research Experience</h2>
+
+        <!-- Project 1 -->
+        <div class="research-item">
+            <div class="research-header">
+                <div class="research-title">Computational Mathematics</div>
+                <div class="research-date">May 2025 - Present</div>
+            </div>
+            <div class="research-role">Sparse Tensor Response Regression and Efficient Algorithms (Principal Investigator; Awarded ¥50,000 university research grant after the proposal defense)</div>
+
+            <div class="subsection-title">(1) From reading papers to posing a research question</div>
+            <p>During the mid-term review of my first research project (A piece of research I conducted in my freshman year, which will be mentioned later), I came across the TVP-VAR (Time-Varying Parameter Vector Autoregression) family of models on WoS. The model is widely used in economic, financial, and neuroimaging time-series analysis, but it has a well-recognized bottleneck: the number of parameters grows quadratically with the number of variables, and conventional parameter-evolution schemes, such as rolling windows, Kalman-filter-type updates, impose a heavy computational burden while failing to adapt to differences in data structure. After reproducing related papers, I did not stop at replication. Instead, I prepared a two-page note of my own questions—including an order-of-magnitude estimate of the parameter explosion and a summary of the failure cases of existing dimension-reduction approaches—and approached my advisor with a proposal combining tensor decomposition with adaptive feature extraction. Recognizing the potential of the tensor decomposition direction, my advisor referred me to the Dean of the School of Mathematics and Statistics. The project was formally approved with a ¥50,000 university research grant following the institutional proposal defense, and I serve as the Principal Investigator.</p>
+
+            <div class="subsection-title">(2) Method design: independently building the model framework</div>
+            <p>After reviewing three technical routes: TVP-VAR, variational Bayes, and tensor decomposition, I independently designed the model framework: the classical TVP-VAR serves as the backbone; a VLMC-TKEO method is introduced for feature extraction to capture nonlinear and abrupt patterns in parameter variation; TT (Tensor-Train) decomposition is applied for structured dimension reduction on the high-dimensional parameter tensor, compressing the parameter count from quadratic to linear scale; and variational inference is used for approximate posterior training, so that the distribution of parameter variation adjusts dynamically with evolving data features rather than relying on a manually specified evolution equation. During the subsequent training phase, I brought together two classmates who were genuinely interested in the project, and we held in-depth discussions that further refined the design.</p>
+
+            <div class="subsection-title">(3) Experimental validation: from idea to reproducible code</div>
+            <p>I independently implemented all of the core code. For initial validation, I selected an fMRI neuroimaging dataset and proactively identified state-of-the-art competing models as baselines for a like-for-like comparison. The results show substantial improvements of my model in both goodness of fit and parameter stability.</p>
+
+            <div class="subsection-title">(4) Intellectual honesty: auditing the method against theory</div>
+            <p>Rather than rushing to finalize the results when the experiments that looked good, I stepped back to examine the algorithm at the theoretical level and identified a potential flaw in the current design. Specifically, while reviewing the literature, I realized that the second core tensor in my time-varying block does not directly carry the response variables, which creates an inconsistency in the theoretical assumptions. Instead of sidestepping or concealing this issue, I shifted the focus after the mid-term review to theoretical analysis: tracing the loophole back to its underlying assumptions and re-deriving the formulation to ensure rigor. This process taught me a lasting lesson: empirical improvement is only a necessary condition; theoretical self-consistency is what makes a method sufficient.</p>
+
+            <div class="subsection-title">(5) Progress</div>
+            <p>As Principal Investigator, I independently completed the core model development and all coding. The project passed its mid-term review successfully.</p>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="research-item">
+            <div class="research-header">
+                <div class="research-title">Econometrics</div>
+                <div class="research-date">2024 - Jul 2025</div>
+            </div>
+            <div class="research-role">The Impact of Geopolitical Risk on the Chinese Stock Market (Project Leader; rated University-Level Excellent, top 1%)</div>
+
+            <div class="subsection-title">(1) Project background and independent ownership</div>
+            <p>This project was formed through a randomly assigned team competition at my school. Once the topic fell to me, I did not wait for others to drive the work forward; instead, I independently carried out the entire research pipeline, from formulating the research question and designing the technical roadmap to completing all empirical analysis. I ultimately led the team to a University-Level Excellent rating (top 1%). This experience taught me a lesson that has shaped all my subsequent research: you cannot count on others to carry you in research—ownership must stay in your own hands.</p>
+
+            <div class="subsection-title">(2) Securing data: creating your own conditions when none exist</div>
+            <p>My university had not purchased access to the financial databases this project required. Rather than narrowing the research scope or lowering the data standard, I first wrote my own web scrapers to collect publicly available data. When I found the scraped data insufficient for panel analysis and robustness checks, I proactively visited a professor at Chongqing Technology and Business University, explained my research design and data needs, and successfully obtained access to the remaining portion of the data—ultimately assembling a complete analysis dataset. This process taught me that data quality sets the ceiling of any empirical conclusion, and that obtaining data is itself a research skill.</p>
+
+            <div class="subsection-title">(3) Self-taught methods and model implementation</div>
+            <p>Econometric modeling was the technical core of this project. I systematically studied the mathematical foundations of econometrics—including the specification, identification, and estimation of VAR-type time-series models—and taught myself R, Matlab, and EViews from scratch, independently building, estimating, and coding all of the project's models. Cross-validating the same model across different software packages also gave me an intuitive understanding of the numerical differences between implementations.</p>
+
+            <div class="subsection-title">(4) Independent research and writing</div>
+            <p>I independently completed the literature review, research design, empirical analysis, and the full paper, and single-handedly delivered the proposal defense, the mid-term report, and the final defense—all three stages received positive evaluations from the review committee.</p>
+
+            <div class="subsection-title">(5) A moment of recognition, and an active choice of direction</div>
+            <p>After the final defense, a professor in Financial Mathematics on the review panel asked me to stay behind and invited me to join his research group. The invitation affirmed my empirical skills, but reflecting on the project, I realized that my most exciting moments were not when the regressions returned significant results—they were when I was debugging the model and understanding why it was specified the way it was. Rather than applying existing methods to applied questions, I wanted to work on the methods and theory themselves—especially the mathematical structure and computational efficiency behind statistical models. I therefore politely declined the invitation and shifted my focus to statistics and computational mathematics, a decision that directly led to my next research project.</p>
+
+            <div class="subsection-title">(6) The bridge to the tensor regression project</div>
+            <p>It was while preparing for this project's mid-term review that I came across the TVP-VAR family of models in a CNKI literature search and noticed its parameter-explosion bottleneck (detailed in the last entry). In retrospect, this empirical project was my apprenticeship in research methodology: it taught me how to identify problems from data and from the literature, and it made clear where my true interests lie—statistical modeling and computation.</p>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="research-item">
+            <div class="research-header">
+                <div class="research-title">Machine Learning</div>
+                <div class="research-date">Jul 2026 - Present</div>
+            </div>
+            <div class="research-role">Diabetes Early Risk Screening: A Hybrid Framework Combining Machine Learning and Case-Based Reasoning (Project Leader)</div>
+
+            <div class="subsection-title">(1) Scoping the research: deciding what is worth doing before doing it</div>
+            <p>Unlike most projects, which were driven by coursework or competitions, this project started entirely from a real-world problem, as my grandfather currently caught diabetes. I first surveyed the global diabetes epidemic and the pain points of early screening, then compared two public datasets, Pima Indians and Diabetes Health Indicators, evaluating them along three dimensions: data scale, feature dimensionality, and real clinical applicability. Only after deciding on the CDC-BRFSS-derived Diabetes Health Indicators dataset as the research foundation did I formally launch the project. This scoping phase taught me a working habit I now follow in every project: argue first whether the data can support the question, and only then decide whether the research is worth doing. This matters far more than jumping straight into modeling.</p>
+
+            <div class="subsection-title">(2) Method design: a hybrid architecture to reconcile black-box performance with trustworthiness</div>
+            <p>Rather than simply stacking neural network layers, I deliberately designed a hybrid framework combining machine learning with case-based reasoning. The machine learning component mines population-level diabetes risk patterns, while case-based reasoning retrieves historically similar patients as supporting evidence for individual predictions. On top of this, I introduced dual uncertainty quantification: aleatoric uncertainty captures noise in the data, and epistemic uncertainty captures the model's own lack of knowledge. Fusing 21 demographic, behavioral, clinical, and social-health features, the system delivers an interpretable risk screening pipeline. The motivation is straightforward: in a medical setting, a model that doctors cannot understand or challenge will never be used, no matter how accurate it is.</p>
+
+            <div class="subsection-title">(3) Engineering and a rigorous stance on scope</div>
+            <p>The system architecture is complete: data cleaning and balancing, the risk estimation module, and the similar-case matching module have all been developed. I explicitly scoped the system as a tool for assisted early screening rather than clinical diagnosis, and designed the validation criteria accordingly. I am currently developing a conflict-checking and reliability assessment module that verifies the consistency between model outputs and case-based evidence, and proactively identifies scenarios where the model is likely to fail. I would rather have the system say "I don't know" when it is unreliable than let it make confident mistakes.</p>
+
+            <div class="subsection-title">(4) Independent ownership</div>
+            <p>As project leader, I independently completed the research design, model implementation, and the first draft of the paper.</p>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="research-item">
+            <div class="research-header">
+                <div class="research-title">Natural Language Processing</div>
+                <div class="research-date">Aug 2025 - Present</div>
+            </div>
+            <div class="research-role">CogUAR: A Cognition-Inspired, Uncertainty-Guided Adaptive Retrieval-Augmented Generation Framework (Independent Researcher)</div>
+
+            <div class="subsection-title">(1) Sparked by curiosity, matured into method</div>
+            <p>This project best illustrates what drives my research. During the summer mini-term of 2025, I read several papers on retrieval-augmented generation purely out of curiosity and noticed that existing RAG systems generally lack metacognitive awareness: they do not know when to retrieve or how much to retrieve, which leads to two coexisting failure modes, over-retrieval that wastes compute and under-retrieval that causes hallucination. I did not stop at observing the phenomenon. Instead, I dug deeper, studying the cognitive science literature on memory and the literature on uncertainty quantification for large language models, independently distilled the research pain points, and established the direction of the project. Curiosity lights the fire; the literature and methodology turn the fire into a research agenda. This project confirmed for me what a complete approach to research looks like.</p>
+
+            <div class="subsection-title">(2) Method design: translating structures from cognitive science into computational modules</div>
+            <p>The framework design is the core contribution of this project. Drawing on the Atkinson-Shiffrin memory hierarchy theory, I independently designed a three-layer cognitive memory architecture consisting of working memory, episodic memory, and semantic memory. I proposed the UTD (Uncertainty Trend Deviation) metric to detect knowledge gaps during generation before they cause errors, rather than patching mistakes after the model has already gone wrong. I built a three-granularity adaptive retrieval scheduler that adjusts retrieval depth according to query complexity, balancing hallucination suppression against retrieval cost. The essence of this design is the migration of the uncertainty quantification idea that recurs across my tensor regression and diabetes projects into an entirely new domain. I am increasingly convinced that understanding uncertainty is the problem I most want to work on in statistical and methodological research.</p>
+
+            <div class="subsection-title">(3) A complete experimental loop</div>
+            <p>I independently built the entire framework and ran all experiments on a 2,000-sample subset of the HotpotQA multi-hop question answering dataset. I conducted ablation studies to verify the contribution of each component and performed a detailed breakdown of error modes. I am currently addressing two limitations of the current work: the additional computational overhead of reasoning-time retrieval, and the reliance on a single test dataset, and I am extending the validation to multiple datasets.</p>
+
+            <div class="subsection-title">(4) Independent ownership</div>
+            <p>The overall system design, implementation of all metrics and code, all experiments and result analysis, and the first draft of the paper were completed independently by me.</p>
+        </div>
+    </section>
+
+    <!-- Scholarship and Prize Section -->
+    <section>
+        <h2>Scholarship and Prize</h2>
+        <ul>
+            <li>2025 Received the national scholarship (1%)</li>
+            <li>2024- present Ranked first in the overall assessment of the major</li>
+            <li>2025 The Second Prize of the China Undergraduate Mathematical Modeling Contest</li>
+            <li>2025&2026 National Second Prize in the College Students' English Competition</li>
+            <li>2025 Second Prize in the Mathematics Competition of Chongqing University</li>
+        </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-group">
+            <span class="skills-label">Proficient in:</span> Python, C++, Matlab
+        </div>
+        <div class="skills-group">
+            <span class="skills-label">Capable of using:</span> R, EViews, Stata, SPSS
+        </div>
+        <div class="skills-group">
+            <span class="skills-label">Currently learning:</span> Java, CAD
+        </div>
+    </section>
+
+</div>
+
 </body>
 </html>
